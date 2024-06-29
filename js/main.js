@@ -55,7 +55,7 @@ function displayWeatherData(data) {
     const weatherDetails = document.getElementById('weatherDetails');
     if (weatherDetails) {
         let htmlContent = '<div class="row">';
-      
+        const isFahrenheit = document.getElementById('tempToggle').checked; // Check toggle state
 
         data.dataseries.forEach(item => {
            // Convert date from YYYYMMDD to Date object
@@ -63,11 +63,12 @@ function displayWeatherData(data) {
             const month = item.date.toString().substring(4, 6);
             const day = item.date.toString().substring(6, 8);
             const date = new Date(`${year}-${month}-${day}`);
-
+   
     // Format the date as "Month, day"
             const options = { month: 'long', day: 'numeric' };
             const formattedDate = date.toLocaleDateString('en-US', options);
-
+            const temperatureH = isFahrenheit ? (item.temp2m.max * 9/5 + 32) : item.temp2m.max; // Convert to Fahrenheit if needed
+            const temperatureL = isFahrenheit ? (item.temp2m.min * 9/5 + 32) : item.temp2m.min; // Convert to Fahrenheit if needed
     htmlContent += `
         <div class="col-sm-12 col-md-2 mb-4"><!-- Bootstrap responsive columns -->
             <div class="card custom-blue">
@@ -75,8 +76,8 @@ function displayWeatherData(data) {
             <h5 class="card-title">${formattedDate}</h5>
             <img src ="./images/${item.weather}.png" alt="${item.weather}" class="img-fluid">
             <p class="card-text"> ${item.weather}</p>
-            <p class="card-text">H: ${item.temp2m.max}°C</p>
-            <p class="card-text">L: ${item.temp2m.min}°C</p>
+            <p class="card-text">H: ${temperatureH} ${isFahrenheit ? '°F' : '°C'}</p>
+            <p class="card-text">L: ${temperatureL} ${isFahrenheit ? '°F' : '°C'}</p>
            
         </div>
         </div>
