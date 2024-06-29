@@ -1,0 +1,105 @@
+/* Base colors */
+/* Base colors */
+:root {
+    --eu-blue: #003399; /* Deep blue for the background, representing the flag's blue */
+    --eu-yellow: #FFCC00; /* Yellow for accents and highlights, representing the stars on the flag */
+    --custom-blue: #b2d0eb; /* Slightly lighter blue for secondary elements or backgrounds */
+    /* Text colors */
+    --text-primary: #FFFFFF; /* White for primary text for better readability on dark backgrounds */
+    --text-secondary: #E1E1E1; /* Light grey for secondary text */
+
+    /* Background colors */
+    --background-primary: var(--eu-blue); /* Primary background color */
+    --background-secondary: #0055A4; /* Slightly lighter blue for secondary elements or backgrounds */
+    --background-highlight: var(--eu-yellow); /* Yellow for highlighting important elements */
+
+    /* Button and link colors */
+    --button-bg: var(--eu-yellow); /* Yellow background for buttons */
+    --button-text: var(--eu-blue); /* Blue text on buttons */
+    --link-color: var(--eu-yellow); /* Yellow for links to stand out */
+
+    /* Utility colors */
+    --border-color: #FFCC00; /* Yellow for borders to match the EU theme */
+    --shadow-color: rgba(0, 0, 0, 0.2); /* Soft shadow for depth, using black with transparency */
+}
+
+body {
+    background-color: var(--background-primary);
+    color: var(--text-primary);
+}
+.container {
+    background-color: var(--background-secondary);
+    color: var(--text-secondary);
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none; /* Example style */
+}
+
+button {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Drop down menu colors */
+
+
+a {
+    color: var(--link-color);
+    text-decoration: none; /* Example style */
+}
+
+button {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.bg-custom {
+    background-color: #6c757d; /* Warm gray */
+    color: #ffffff; /* White text */
+}
+
+/* Hero Overlay image */
+.hero {
+    background-image: url('../images/globe_lights.png'); 
+    background-color: rgba(15, 6, 85, 0.6); /* Darken the image */
+    background-size: cover;
+    background-position: center center;
+    color: var(--eu-yellow);
+    padding: 100px 0;
+    background-color: var(--shadow-color);
+    text-align: center;
+    
+}
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 0;
+    /* Text shadow for better readability */
+    text-shadow: 2px 2px 4px rgba(11, 11, 118, 0.5);
+}
+
+/* Card Styles */
+h5.card-title {
+    color: var(--eu-yellow);
+}
+.card-body {
+    background-color: var(--eu-blue);
+    color: #fff;
+    text-align: center;
+}
+
+/* Weather Details */
+.weather-details {
+    background-color: var(--custom-blue);
+    color: var(--text-primary);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
